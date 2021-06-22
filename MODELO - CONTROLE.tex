@@ -35,6 +35,7 @@
 \usepackage{subfig}
 \usepackage{mathptmx}
 \usepackage{changepage}
+\usepackage{tabularx}
 \usepackage[abbr]{lib/harvard}
 
 %\usepackage[alf]{abntex2cite}
@@ -64,36 +65,26 @@ hidelinks]{hyperref}
 
 %%%%%%%%%%%% LOGOS %%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[!ht]
 
-\centering
-
-\subfloat{
-\includegraphics[width=2.7cm]{UFRN.pdf}
-\label{UFRN Logo}
-}
-\hspace{11.09cm}
-\subfloat{
-\includegraphics[width=2.4cm]{DCA.pdf}
-\label{DCA Logo}
-}
-
-%\caption{}
-\label{Logos}
-
-\end{figure}
 
 %%%%%%%%%%%%%%% CAPA %%%%%%%%%%%%%%%%%
 
 \vspace{-1cm}
 
 \begin{center}
-{\bf{\normalsize UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE\\
-CENTRO DE TECNOLOGIA\\
-DEPARTAMENTO DE ENGENHARIA DE COMPUTAÇÃO E AUTOMAÇÃO\\
-CURSO DE ENGENHARIA DE COMPUTAÇÃO
-}}
 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\begin{tabularx}{\linewidth}{@{}l@{}C@{}r@{}}
+    \parbox[c]{3cm}{\includegraphics[width=\linewidth]{UFRN.pdf}} &
+        \begin{center}
+            \textsf{\textsc{Universidade Federal do Rio Grande do Norte\\
+            Centro de Tecnologia\\
+            Departamento De Engenharia De Computação e automação\\
+            Curso de Engenharia De Computação}}
+        \end{center} &
+    \parbox[c]{2cm}{\includegraphics[width=\linewidth]{DCA.pdf}}
+\end{tabularx}
 
 \vspace{3.6cm}
 
@@ -207,33 +198,7 @@ devem ser colocadas as palavras-chave.\\
 
 \textbf{Palavras-chave:}
 
-\newpage
 
-%%%%%%%%%%%%%%%  LISTA DE SÍMBOLOS %%%
-
-\thispagestyle{empty}
-
-\begin{center}
-{\large \textbf{LISTA DE SÍMBOLOS}}
-\end{center}
-
-\vspace{3cm}
-
-\begin{tabular}{ l l }
-A\hspace{1.5cm} & Matriz triangular superior com diagonal unitária.\\
-\phantom{a} & \phantom{a}\\
-D\hspace{1.5cm} & Matriz diagonal obtida a partir de $W^{T}W$\\
-\phantom{a} & \phantom{a}\\
-$\theta$\hspace{1.5cm} & Vetor de parâmetros.\\
-\phantom{a} & \phantom{a}\\
-$\Xi$\hspace{1.5cm} & Vetor de resíduos de modelagem.\\
-\phantom{a} & \phantom{a}\\
-d\hspace{1.5cm} & Tempo de retardo de um sistema ou tempo morto.\\
-\phantom{a} & \phantom{a}\\
-e(k)\hspace{1.5cm} & Resíduo (Erro de Estimação mais o Ruído).\\
-\end{tabular}
-
-\newpage
 
 %%%% LISTA DE ABREVIATURAS E SIGLAS %%
 
@@ -360,12 +325,12 @@ pesquisas futuras.
 %%%%%%%% REFERÊNCIAS %%%%%%%%%%%%%%%%%
 
 
-\bibliographystyle{bib/ppgee}
-\bibliography{bib/bibliografia}
+
 
 % Referências bibliográficas (geradas automaticamente)
-\addcontentsline{toc}{chapter}{Referências bibliográficas}
-
+\addcontentsline{toc}{section}{Referências bibliográficas}
+\bibliographystyle{bib/ppgee}
+\bibliography{bib/bibliografia}
 
 \appendix
 
